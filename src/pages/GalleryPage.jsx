@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Play, Image, Video, Grid, List, Filter, Search } from 'lucide-react';
 
-const PortfolioPage = () => {
+const GalleryPage = () => {
   const [activeTab, setActiveTab] = useState('all');
   const [viewMode, setViewMode] = useState('grid');
   const [searchTerm, setSearchTerm] = useState('');
@@ -13,7 +13,7 @@ const PortfolioPage = () => {
     { id: 'before-after', name: 'Əvvəl/Sonra', count: 8 }
   ];
 
-  const portfolioItems = [
+  const galleryItems = [
     {
       id: 1,
       type: 'photo',
@@ -64,13 +64,13 @@ const PortfolioPage = () => {
     }
   ];
 
-  const filteredItems = portfolioItems.filter(item => {
-    const matchesTab = activeTab === 'all' || 
-                      (activeTab === 'photos' && item.type === 'photo') ||
-                      (activeTab === 'videos' && item.type === 'video') ||
-                      (activeTab === 'before-after' && item.type === 'before-after');
+  const filteredItems = galleryItems.filter(item => {
+    const matchesTab = activeTab === 'all' ||
+      (activeTab === 'photos' && item.type === 'photo') ||
+      (activeTab === 'videos' && item.type === 'video') ||
+      (activeTab === 'before-after' && item.type === 'before-after');
     const matchesSearch = item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         item.category.toLowerCase().includes(searchTerm.toLowerCase());
+      item.category.toLowerCase().includes(searchTerm.toLowerCase());
     return matchesTab && matchesSearch;
   });
 
@@ -89,7 +89,7 @@ const PortfolioPage = () => {
         <div className="container mx-auto px-4 py-16 relative z-10">
           <div className="text-center mb-12">
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
-              Portfolio
+              Qalereya
             </h1>
             <p className="text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
               İşlərimizin nəticələrini görün. Hər layihə bizim üçün yeni bir uğur hekayəsidir.
@@ -107,7 +107,7 @@ const PortfolioPage = () => {
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-white/60 w-5 h-5" />
               <input
                 type="text"
-                placeholder="Portfolio axtarın..."
+                placeholder="Qalereyada axtarın..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="w-full pl-10 pr-4 py-3 bg-white/10 backdrop-blur-sm rounded-xl text-white placeholder-white/60 border border-white/20 focus:border-gold focus:outline-none transition-colors"
@@ -120,11 +120,10 @@ const PortfolioPage = () => {
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`px-4 py-2 rounded-xl font-medium transition-all ${
-                    activeTab === tab.id
-                      ? 'bg-gold text-main shadow-lg'
-                      : 'bg-white/10 backdrop-blur-sm text-white/80 hover:bg-white/20 border border-white/20'
-                  }`}
+                  className={`px-4 py-2 rounded-xl font-medium transition-all ${activeTab === tab.id
+                    ? 'bg-gold text-main shadow-lg'
+                    : 'bg-white/10 backdrop-blur-sm text-white/80 hover:bg-white/20 border border-white/20'
+                    }`}
                 >
                   {tab.name} ({tab.count})
                 </button>
@@ -135,17 +134,15 @@ const PortfolioPage = () => {
             <div className="flex gap-2">
               <button
                 onClick={() => setViewMode('grid')}
-                className={`p-2 rounded-lg transition-all ${
-                  viewMode === 'grid' ? 'bg-gold text-main' : 'bg-white/10 backdrop-blur-sm text-white/80 hover:bg-white/20 border border-white/20'
-                }`}
+                className={`p-2 rounded-lg transition-all ${viewMode === 'grid' ? 'bg-gold text-main' : 'bg-white/10 backdrop-blur-sm text-white/80 hover:bg-white/20 border border-white/20'
+                  }`}
               >
                 <Grid className="w-5 h-5" />
               </button>
               <button
                 onClick={() => setViewMode('list')}
-                className={`p-2 rounded-lg transition-all ${
-                  viewMode === 'list' ? 'bg-gold text-main' : 'bg-white/10 backdrop-blur-sm text-white/80 hover:bg-white/20 border border-white/20'
-                }`}
+                className={`p-2 rounded-lg transition-all ${viewMode === 'list' ? 'bg-gold text-main' : 'bg-white/10 backdrop-blur-sm text-white/80 hover:bg-white/20 border border-white/20'
+                  }`}
               >
                 <List className="w-5 h-5" />
               </button>
@@ -154,23 +151,20 @@ const PortfolioPage = () => {
         </div>
       </div>
 
-      {/* Portfolio Grid */}
+
       <div className="container mx-auto px-4">
-        <div className={`grid gap-8 ${
-          viewMode === 'grid' 
-            ? 'md:grid-cols-2 lg:grid-cols-3' 
-            : 'grid-cols-1 max-w-4xl mx-auto'
-        }`}>
+        <div className={`grid gap-8 ${viewMode === 'grid'
+          ? 'md:grid-cols-2 lg:grid-cols-3'
+          : 'grid-cols-1 max-w-4xl mx-auto'
+          }`}>
           {filteredItems.map((item) => (
-            <div key={item.id} className={`bg-white/10 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/20 hover:bg-white/20 transition-all group ${
-              viewMode === 'list' ? 'flex' : ''
-            }`}>
-              {/* Image */}
-              <div className={`relative bg-gradient-to-br from-dark to-main overflow-hidden ${
-                viewMode === 'list' ? 'w-80 h-48' : 'h-64'
+            <div key={item.id} className={`bg-white/10 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/20 hover:bg-white/20 transition-all group ${viewMode === 'list' ? 'flex' : ''
               }`}>
+              {/* Image */}
+              <div className={`relative bg-gradient-to-br from-dark to-main overflow-hidden ${viewMode === 'list' ? 'w-80 h-48' : 'h-64'
+                }`}>
                 <div className="absolute inset-0 bg-black/20"></div>
-                
+
                 {/* Type Indicator */}
                 <div className="absolute top-4 left-4">
                   <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm px-3 py-1 rounded-full border border-white/20">
@@ -178,8 +172,8 @@ const PortfolioPage = () => {
                     {item.type === 'photo' && <Image className="w-4 h-4 text-white" />}
                     {item.type === 'before-after' && <Filter className="w-4 h-4 text-white" />}
                     <span className="text-xs text-white font-medium">
-                      {item.type === 'video' ? 'Video' : 
-                       item.type === 'before-after' ? 'Əvvəl/Sonra' : 'Şəkil'}
+                      {item.type === 'video' ? 'Video' :
+                        item.type === 'before-after' ? 'Əvvəl/Sonra' : 'Şəkil'}
                     </span>
                   </div>
                 </div>
@@ -206,7 +200,7 @@ const PortfolioPage = () => {
                 <h3 className="text-xl font-bold text-white mb-2 group-hover:text-gold transition-colors">
                   {item.title}
                 </h3>
-                
+
                 <p className="text-white/70 text-sm mb-4">
                   {item.description}
                 </p>
@@ -235,4 +229,4 @@ const PortfolioPage = () => {
   );
 };
 
-export default PortfolioPage;
+export default GalleryPage;

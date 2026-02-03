@@ -49,7 +49,7 @@ const HeroSection = () => {
             {/* Main Heading */}
             <div className="space-y-4">
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
-                HƏR TORPAQDA, HƏR EVƏ
+                {t("maintitle")}
               </h1>
               <h2 className="text-3xl md:text-4xl font-bold text-gold leading-tight">
                 15 İLLİK İPOTEKA
@@ -76,8 +76,8 @@ const HeroSection = () => {
                 "Layihələrimiz imzamızdır!"
               </p>
               <p className="text-white/70 text-sm leading-relaxed">
-                Şirkətimiz sadiq qalırıq, keyfiyyət və estetikliyin artırılması ilə əlaqədar. 
-                Müştərilərimizin tələblərinə və 100 il ərzində təcrübəmizə əsaslanaraq, 
+                Şirkətimiz sadiq qalırıq, keyfiyyət və estetikliyin artırılması ilə əlaqədar.
+                Müştərilərimizin tələblərinə və 100 il ərzində təcrübəmizə əsaslanaraq,
                 müştərilərimizin layihələrini həyata keçiririk.
               </p>
             </div>

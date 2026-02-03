@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom';
 const AboutSection = () => {
   const { t } = useLanguage();
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -18,7 +17,7 @@ const AboutSection = () => {
   const navItems = [
     { path: '/', name: 'Ana Səhifə' },
     { path: '/projects', name: 'Layihələr' },
-    { path: '/portfolio', name: 'Portfolio' },
+    { path: '/gallery', name: 'Qalereya' },
     { path: '/services', name: 'Dizayn Xidmətləri' },
     { path: '/contact', name: 'Əlaqə' },
   ];
@@ -110,7 +109,7 @@ const AboutSection = () => {
             STONE HOUSE Construction
           </h2>
           <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            25 ildən artıq təcrübəyə malik peşəkar tikinti şirkəti. Müasir texnologiyalar və 
+            25 ildən artıq təcrübəyə malik peşəkar tikinti şirkəti. Müasir texnologiyalar və
             ənənəvi keyfiyyət standartlarını birləşdirərək, xəyallarınızdakı evi həyata keçiririk.
           </p>
         </motion.div>
@@ -132,7 +131,7 @@ const AboutSection = () => {
                 className="w-full h-[500px] object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-stone-900/60 to-transparent"></div>
-              
+
               {/* Floating Badge */}
               <div className="absolute bottom-8 left-8 right-8 glass-effect rounded-xl p-6">
                 <div className="grid grid-cols-2 gap-4">
@@ -145,9 +144,6 @@ const AboutSection = () => {
                 </div>
               </div>
             </div>
-
-            {/* Decorative Element */}
-            <div className="absolute -bottom-6 -right-6 w-32 h-32 gold-gradient rounded-2xl -z-10"></div>
           </motion.div>
 
           {/* Right - Content */}
@@ -163,8 +159,8 @@ const AboutSection = () => {
                 Niyə Bizi Seçməlisiniz?
               </h3>
               <p className="text-gray-300 leading-relaxed mb-6">
-                STONE HOUSE Construction olaraq, hər bir layihəyə fərdi yanaşır və müştərilərimizin 
-                ehtiyaclarını ən yüksək səviyyədə qarşılayırıq. Komandamız yalnız tikinti işləri ilə 
+                STONE HOUSE Construction olaraq, hər bir layihəyə fərdi yanaşır və müştərilərimizin
+                ehtiyaclarını ən yüksək səviyyədə qarşılayırıq. Komandamız yalnız tikinti işləri ilə
                 məhdudlaşmır, həm də dizayn, planlaşdırma və texniki məsləhət xidmətləri təqdim edir.
               </p>
 
@@ -186,14 +182,6 @@ const AboutSection = () => {
               </div>
             </div>
 
-            {/* Hamburger Menu Button */}
-            <button
-              onClick={() => setIsMenuOpen(true)}
-              className="inline-flex items-center px-8 py-4 gold-gradient text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
-            >
-              <Menu size={20} className="mr-2" />
-              Menu
-            </button>
           </motion.div>
         </div>
 

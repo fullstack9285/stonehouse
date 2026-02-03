@@ -12,26 +12,30 @@ export const LanguageProvider = ({ children }) => {
       // Header
       home: 'Ana Səhifə',
       projects: 'Layihələr',
-      portfolio: 'Portfolio',
+      gallery: 'Qalereya',
       services: 'Dizayn Xidmətləri',
       contact: 'Əlaqə',
-      address: 'Bakı şəh., Sabunçu ray., Bakıxanov qəsəbəsi, Şamil Kamilov küç., ev 2h',
+      address: 'Baki şəh., Xətai ray., Gəncə Prospekti, məhəllə 2935 -2935A',
       callUs: 'Zəng edin',
+
+
+
+      maintitle: "HƏR TORPAQDA, HƏR EVƏ",
       
+
       // Hero Section
       tagline: 'Professional Daş Ev Tikintisi',
-      mainTitle: 'Müasir Tikinti',
       subtitle: 'və Sənaye Agentliyi',
       description: 'Müştərilərimizlə əməkdaşlıq etməkdən qürur duyuruq, onların çətinliklərini, hədəflərini və gələcək üçün vizyonlarını anlamaq üçün sıx işləyirik.',
       getStarted: 'Başlayaq',
       freeConsultation: 'Pulsuz Konsultasiya',
-      
+
       // Stats
       completedProjects: 'Tamamlanmış Layihə',
       happyClients: 'Məmnun Müştəri',
       yearsExperience: 'İllik Təcrübə',
       warranty: 'Zəmanət',
-      
+
       // Footer
       quickLinks: 'Sürətli Keçidlər',
       ourServices: 'Xidmətlərimiz',
@@ -44,26 +48,26 @@ export const LanguageProvider = ({ children }) => {
       // Header
       home: 'Home',
       projects: 'Projects',
-      portfolio: 'Portfolio',
+      gallery: 'Gallery',
       services: 'Design Services',
       contact: 'Contact',
       address: 'Baku city, Sabunchu district, Bakikhanov settlement, Shamil Kamilov str., house 2h',
       callUs: 'Call Us',
-      
+
+      maintitle: "IN EVERY LAND, IN EVERY HOME",
       // Hero Section
       tagline: 'Professional Stone House Construction',
-      mainTitle: 'Modern Construction',
       subtitle: '& Industrial Agency',
       description: 'We take pride in our collaborative approach, working closely with clients to understand their challenges, goals, and vision for the future.',
       getStarted: 'Get Started',
       freeConsultation: 'Free Consultation',
-      
+
       // Stats
       completedProjects: 'Completed Projects',
       happyClients: 'Happy Clients',
       yearsExperience: 'Years Experience',
       warranty: 'Warranty',
-      
+
       // Footer
       quickLinks: 'Quick Links',
       ourServices: 'Our Services',
@@ -76,26 +80,26 @@ export const LanguageProvider = ({ children }) => {
       // Header
       home: 'Главная',
       projects: 'Проекты',
-      portfolio: 'Портфолио',
+      gallery: 'Галерея',
       services: 'Дизайн Услуги',
       contact: 'Контакты',
       address: 'г. Баку, Сабунчинский р-н, пос. Бакиханов, ул. Шамиля Камилова, д. 2h',
       callUs: 'Позвонить',
-      
+
+      maintitle: "В каждой стране, в каждом доме",
       // Hero Section
       tagline: 'Профессиональное Каменное Домостроение',
-      mainTitle: 'Современное Строительство',
       subtitle: 'и Промышленное Агентство',
       description: 'Мы гордимся нашим совместным подходом, тесно работая с клиентами, чтобы понять их проблемы, цели и видение будущего.',
       getStarted: 'Начать',
       freeConsultation: 'Бесплатная Консультация',
-      
+
       // Stats
       completedProjects: 'Завершенные Проекты',
       happyClients: 'Довольные Клиенты',
       yearsExperience: 'Лет Опыта',
       warranty: 'Гарантия',
-      
+
       // Footer
       quickLinks: 'Быстрые Ссылки',
       ourServices: 'Наши Услуги',

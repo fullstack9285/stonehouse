@@ -4,7 +4,7 @@ const ContactPreview = () => {
   const contactInfo = {
     phones: ['+994 51 511 12 12', '+994 55 806 00 22'],
     email: 'stonehouse022@gmail.com',
-    address: 'Bakı şəh., Sabunçu ray., Bakıxanov qəsəbəsi, Şamil Kamilov küç., ev 2h'
+    address: 'Baki şəh., Xətai ray., Gəncə Prospekti, məhəllə 2935 -2935A'
   };
 
   return (
@@ -15,11 +15,11 @@ const ContactPreview = () => {
             <MessageSquare size={20} />
             <span className="text-sm font-medium">Pulsuz Konsultasiya</span>
           </div>
-          
+
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Layihənizi Bizimlə Müzakirə Edin
           </h2>
-          
+
           <p className="text-stone-300 text-lg mb-8 max-w-2xl mx-auto">
             Sizə zəng edib, layihəniz üçün pulsuz konsultasiya təklif edək.
             Ən yaxşı həlləri birlikdə müəyyən edək.
@@ -35,7 +35,7 @@ const ContactPreview = () => {
               <h4 className="font-semibold mb-3">Telefonla Əlaqə</h4>
               <div className="space-y-2">
                 {contactInfo.phones.map((phone, index) => (
-                  <a 
+                  <a
                     key={index}
                     href={`tel:${phone.replace(/\s/g, '')}`}
                     className="block text-lg font-semibold hover:text-amber-300 transition-colors"
@@ -52,7 +52,7 @@ const ContactPreview = () => {
                 <Mail size={24} />
               </div>
               <h4 className="font-semibold mb-3">Email Göndərin</h4>
-              <a 
+              <a
                 href={`mailto:${contactInfo.email}`}
                 className="text-lg font-semibold hover:text-amber-300 transition-colors break-all"
               >
@@ -73,7 +73,7 @@ const ContactPreview = () => {
           </div>
 
           {/* CTA Button */}
-          <a 
+          <a
             href="/contact"
             className="inline-block bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors hover:scale-105"
           >

@@ -19,7 +19,7 @@ const Header = () => {
   const navItems = [
     { path: '/', name: t('home') },
     { path: '/projects', name: t('projects') },
-    { path: '/portfolio', name: t('portfolio') },
+    { path: '/gallery', name: t('gallery') },
     { path: '/services', name: t('services') },
     { path: '/contact', name: t('contact') },
   ];
@@ -37,13 +37,12 @@ const Header = () => {
   const currentLang = languages.find(lang => lang.code === language);
 
   return (
-    <header className={`fixed w-full z-50 transition-all duration-500 font-poppins ${
-      scrolled 
-        ? 'bg-main/95 backdrop-blur-xl shadow-lg py-2' 
-        : 'bg-main/90 backdrop-blur-sm py-4'
-    }`}>
+    <header className={`fixed w-full z-50 transition-all duration-500 font-poppins ${scrolled
+      ? 'bg-main/95 backdrop-blur-xl shadow-lg py-4'
+      : 'bg-main/90 backdrop-blur-sm py-6'
+      }`}>
       {/* Top Bar - Only visible when not scrolled */}
-      {!scrolled && (
+      {/* {!scrolled && (
         <div className="hidden xl:block border-b border-white/10">
           <div className="container mx-auto px-6">
             <div className="flex items-center justify-between py-2">
@@ -68,16 +67,16 @@ const Header = () => {
             </div>
           </div>
         </div>
-      )}
+      )} */}
 
       {/* Main Navigation */}
       <div className="container mx-auto px-4 lg:px-6">
         <div className="flex justify-between items-center gap-4">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2 group flex-shrink-0">
+          <Link to="/" className="flex items-center space-x-2 group shrink-0">
             <div className="relative">
-              <div className="w-10 h-10 stone-gradient rounded-lg flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300">
-                <span className="text-white text-lg font-bold font-serif">S</span>
+              <div className="w-14 h-14 rounded-lg flex items-center justify-center duration-300 overflow-hidden">
+                <img src="/logo.png" alt="Stone House Construction" className='w-full h-full' />
               </div>
             </div>
             <div className="hidden md:block">
@@ -96,11 +95,10 @@ const Header = () => {
               <Link
                 key={item.path}
                 to={item.path}
-                className={`relative text-sm xl:text-base font-medium transition-all duration-300 py-2 px-3 rounded-lg whitespace-nowrap ${
-                  location.pathname === item.path
-                    ? 'text-gold bg-white/10'
-                    : 'text-white hover:text-gold hover:bg-white/5'
-                }`}
+                className={`relative text-sm xl:text-base font-medium transition-all duration-300 py-2 px-3 rounded-lg whitespace-nowrap ${location.pathname === item.path
+                  ? 'text-gold bg-white/10'
+                  : 'text-white hover:text-gold hover:bg-white/5'
+                  }`}
               >
                 {item.name}
                 {location.pathname === item.path && (
@@ -129,11 +127,10 @@ const Header = () => {
                           changeLanguage(lang.code);
                           setIsLangOpen(false);
                         }}
-                        className={`w-full flex items-center justify-center px-4 py-2 text-left transition-all duration-300 ${
-                          language === lang.code
-                            ? 'bg-white/10 text-gold font-semibold'
-                            : 'text-white hover:bg-white/5 hover:text-gold'
-                        }`}
+                        className={`w-full flex items-center justify-center px-4 py-2 text-left transition-all duration-300 ${language === lang.code
+                          ? 'bg-white/10 text-gold font-semibold'
+                          : 'text-white hover:bg-white/5 hover:text-gold'
+                          }`}
                       >
                         <span className="text-sm">{lang.name}</span>
                       </button>
@@ -160,11 +157,10 @@ const Header = () => {
               <Link
                 key={item.path}
                 to={item.path}
-                className={`block py-3 px-4 rounded-lg font-medium transition-all duration-300 ${
-                  location.pathname === item.path
-                    ? 'text-gold bg-white/10'
-                    : 'text-white hover:text-gold hover:bg-white/5'
-                }`}
+                className={`block py-3 px-4 rounded-lg font-medium transition-all duration-300 ${location.pathname === item.path
+                  ? 'text-gold bg-white/10'
+                  : 'text-white hover:text-gold hover:bg-white/5'
+                  }`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.name}
@@ -178,11 +174,10 @@ const Header = () => {
                     changeLanguage(lang.code);
                     setIsMenuOpen(false);
                   }}
-                  className={`px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
-                    language === lang.code
-                      ? 'bg-gold text-main'
-                      : 'bg-white/10 text-white hover:bg-white/20 hover:text-gold'
-                  }`}
+                  className={`px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${language === lang.code
+                    ? 'bg-gold text-main'
+                    : 'bg-white/10 text-white hover:bg-white/20 hover:text-gold'
+                    }`}
                 >
                   {lang.name}
                 </button>

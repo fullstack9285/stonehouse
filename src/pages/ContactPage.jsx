@@ -11,7 +11,7 @@ const ContactPage = () => {
   });
 
   const contactInfo = {
-    address: 'Bakı şəh., Sabunçu ray., Bakıxanov qəsəbəsi, Şamil Kamilov küç., ev 2h',
+    address: 'Baki şəh., Xətai ray., Gəncə Prospekti, məhəllə 2935 -2935A',
     phones: [
       { number: '+994 51 511 12 12', type: 'Əsas' },
       { number: '+994 55 806 00 22', type: 'Növbəti' }
@@ -45,10 +45,10 @@ const ContactPage = () => {
         }}></div>
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4 py-16 relative z-10">
         {/* Page Header */}
         <div className="mb-12 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
             Əlaqə Saxlayın
           </h1>
           <p className="text-white/80 text-lg max-w-2xl mx-auto">
@@ -92,7 +92,7 @@ const ContactPage = () => {
               </div>
               <div className="space-y-3">
                 {contactInfo.phones.map((phone, index) => (
-                  <a 
+                  <a
                     key={index}
                     href={`tel:${phone.number.replace(/\s/g, '')}`}
                     className="flex items-center justify-between p-3 bg-white/10 backdrop-blur-sm rounded-lg hover:bg-white/20 transition-colors group border border-white/20"
@@ -120,7 +120,7 @@ const ContactPage = () => {
                   <Mail size={20} className="text-gold mt-1" />
                   <div>
                     <h4 className="font-semibold text-white">Email</h4>
-                    <a 
+                    <a
                       href={`mailto:${contactInfo.email}`}
                       className="text-white/80 hover:text-gold transition-colors"
                     >
@@ -128,7 +128,7 @@ const ContactPage = () => {
                     </a>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start space-x-3 pt-4 border-t border-white/10">
                   <Clock size={20} className="text-gold mt-1" />
                   <div>
@@ -164,10 +164,10 @@ const ContactPage = () => {
                       className="w-full px-4 py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent transition-all text-white placeholder-white/60"
                       placeholder="Ad və soyad"
                       value={formData.name}
-                      onChange={(e) => setFormData({...formData, name: e.target.value})}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     />
                   </div>
-                  
+
                   <div>
                     <label className="block text-white mb-2 font-medium">
                       Telefon *
@@ -178,7 +178,7 @@ const ContactPage = () => {
                       className="w-full px-4 py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent transition-all text-white placeholder-white/60"
                       placeholder="+994 __ ___ __ __"
                       value={formData.phone}
-                      onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     />
                   </div>
                 </div>
@@ -193,7 +193,7 @@ const ContactPage = () => {
                     className="w-full px-4 py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent transition-all text-white placeholder-white/60"
                     placeholder="email@example.com"
                     value={formData.email}
-                    onChange={(e) => setFormData({...formData, email: e.target.value})}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   />
                 </div>
 
@@ -204,7 +204,7 @@ const ContactPage = () => {
                   <select
                     className="w-full px-4 py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent transition-all text-white"
                     value={formData.subject}
-                    onChange={(e) => setFormData({...formData, subject: e.target.value})}
+                    onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                   >
                     <option value="" className="text-main">Mövzu seçin</option>
                     <option value="consultation" className="text-main">Pulsuz Konsultasiya</option>
@@ -225,7 +225,7 @@ const ContactPage = () => {
                     className="w-full px-4 py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent transition-all resize-none text-white placeholder-white/60"
                     placeholder="Layihəniz haqqında ətraflı məlumat..."
                     value={formData.message}
-                    onChange={(e) => setFormData({...formData, message: e.target.value})}
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   ></textarea>
                 </div>
 
@@ -237,7 +237,7 @@ const ContactPage = () => {
                     <span>Mesaj Göndər</span>
                     <Send size={20} />
                   </button>
-                  
+
                   <div className="flex items-center space-x-4">
                     <button
                       type="button"
@@ -246,7 +246,7 @@ const ContactPage = () => {
                     >
                       Birbaşa Zəng
                     </button>
-                    
+
                     <button
                       type="button"
                       onClick={openGoogleMaps}
@@ -273,7 +273,7 @@ const ContactPage = () => {
               <div className="h-64 bg-white/10 backdrop-blur-sm rounded-lg overflow-hidden relative border border-white/20">
                 {/* Google Maps iframe burada olacaq */}
                 <div className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-white/10 to-white/5">
-                  <MapPin size={48} className="text-gold mb-4" />
+                  {/* <MapPin size={48} className="text-gold mb-4" />
                   <p className="text-white font-semibold text-center px-4">
                     {contactInfo.address}
                   </p>
@@ -282,22 +282,16 @@ const ContactPage = () => {
                     className="mt-4 px-6 py-2 bg-gold hover:bg-gold/90 text-main rounded-lg font-medium transition-colors"
                   >
                     Google Maps-də Aç
-                  </button>
-                </div>
-              </div>
-              
-              <div className="mt-4 grid grid-cols-2 gap-4 text-sm text-white/80">
-                <div>
-                  <span className="font-semibold">Rayon:</span> Sabunçu
-                </div>
-                <div>
-                  <span className="font-semibold">Qəsəbə:</span> Bakıxanov
-                </div>
-                <div>
-                  <span className="font-semibold">Küçə:</span> Şamil Kamilov
-                </div>
-                <div>
-                  <span className="font-semibold">Ev:</span> 2h
+                  </button> */}
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d41980.52899627805!2d49.90515218977292!3d40.37972584879754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4030657166c5b4ad%3A0x3b60680dd5b75204!2zIljJmXRhaSBQYXJrIiBZYcWfYXnEscWfIEtvbXBsZWtzaSBHyZluY8mZIFByb3NwZWt0aSA0OEE!5e1!3m2!1sen!2saz!4v1770111254225!5m2!1sen!2saz"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen=""
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  />
                 </div>
               </div>
             </div>

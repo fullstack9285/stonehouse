@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import { Wrench, Palette, Building, Calculator, CheckCircle, ArrowRight, Star } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const ServicesPage = () => {
   const [activeService, setActiveService] = useState(null);
+  const navigate = useNavigate()
 
   const services = [
     {
@@ -101,8 +103,8 @@ const ServicesPage = () => {
       <div className="container mx-auto px-4 mb-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
           {services.map((service) => (
-            <div 
-              key={service.id} 
+            <div
+              key={service.id}
               className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/20 transition-all group cursor-pointer"
               onClick={() => setActiveService(activeService === service.id ? null : service.id)}
             >
@@ -142,7 +144,8 @@ const ServicesPage = () => {
                       </div>
                     ))}
                   </div>
-                  <button className="w-full mt-4 px-6 py-3 bg-gold rounded-lg text-main font-semibold hover:bg-gold/90 transition-colors hover:scale-105 transform">
+                  <button className="w-full mt-4 px-6 py-3 bg-gold rounded-lg text-main font-semibold hover:bg-gold/90 transition-colors hover:scale-105 transform"
+                    onClick={() => navigate("/contact")}>
                     Təklif Al
                   </button>
                 </div>
@@ -170,11 +173,6 @@ const ServicesPage = () => {
                 <div className="text-gold font-bold text-lg">{material.price}</div>
               </div>
             ))}
-          </div>
-          <div className="text-center mt-8">
-            <button className="px-8 py-4 bg-gold rounded-xl text-main font-semibold hover:bg-gold/90 transition-all hover:scale-105">
-              Tam Qiymət Siyahısı
-            </button>
           </div>
         </div>
       </div>
@@ -212,11 +210,10 @@ const ServicesPage = () => {
             Pulsuz konsultasiya üçün bizimlə əlaqə saxlayın. Layihənizi müzakirə edək və ən yaxşı həlli tapaq.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="px-8 py-4 bg-gold rounded-xl text-main font-semibold hover:bg-gold/90 transition-all hover:scale-105">
+            <button
+              className="px-8 py-4 bg-gold rounded-xl text-main font-semibold hover:bg-gold/90 transition-all hover:scale-105"
+              onClick={() => navigate("/contact")}>
               Pulsuz Konsultasiya
-            </button>
-            <button className="px-8 py-4 bg-white/10 backdrop-blur-sm rounded-xl text-white font-semibold hover:bg-white/20 transition-all hover:scale-105 border border-white/20">
-              Qiymət Hesabla
             </button>
           </div>
         </div>
